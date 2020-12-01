@@ -1,7 +1,8 @@
 import React from "react"
-import Signup from "./components/signup"
-import Home from"./components/home"
-import Login from "./components/login"
+import Signup from "./pages/signup"
+import Home from"./pages/home"
+import Login from "./pages/login"
+import PrivateRoute from "./components/PrivateRoute"
 import { AuthProvider } from "./contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
@@ -13,7 +14,7 @@ function App() {
           <Router>
             <AuthProvider>
               <Switch>
-                <Route exact path ="/" component={Home}/>
+                <PrivateRoute exact path ="/" component={Home}/>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/login" component={Login}/>
               </Switch>
