@@ -1,13 +1,17 @@
 import React, { useRef, useState } from 'react'
 import { Form, Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
+
+
 
 export default function Login() {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { signup } = useAuth()
+    const { login } = useAuth()
     const [error, setError] =  useState("")
     const [loading, setLoading] =  useState(false)
+    const history = useHistory()
 
     async function handleSumbit(e){
         e.preventDefault()
@@ -15,9 +19,10 @@ export default function Login() {
         try {
           setError("")
           setLoading(true)
-          await signup(emailRef.current.value, passwordRef.current.value)
+          await login(emailRef.current.value, passwordRef.current.value)
+          history.push("/")
         } catch{
-            setError("Failed to create an account")
+            setError("Failed to log in")
         }
 
         setLoading(false)
@@ -44,7 +49,7 @@ export default function Login() {
                 </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
-               Need an Account? Sign Up
+               Need an Account? <Link to="/signup">Sign Up</Link>
             </div>
         </>
     )
