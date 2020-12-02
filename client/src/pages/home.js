@@ -1,10 +1,35 @@
-
+import React, { useState, useEffect } from "react"
 import { Form, Card, Button, Jumbotron, Container, Col, Row, CardDeck } from "react-bootstrap"
 import Navibar from "../components/navbar"
-
-// import axios from "axios"
+import axios from "axios"
 
 export default function Home() {
+    const [options, SetOptions] = useState({
+        method: 'GET',
+            url: 'https://unogsng.p.rapidapi.com/search',
+            params: {
+                type: "movie",
+                genrelist: '',
+                orderby: 'rating',
+                limit: '1',
+                countrylist: '78',
+                audio: 'english',
+                end_year: '2020'
+            },
+            headers: {
+                'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
+                'x-rapidapi-host': 'unogsng.p.rapidapi.com'
+            }
+    })
+
+    useEffect(() => {
+        
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+    })
     
     return (
         <>
@@ -75,7 +100,7 @@ export default function Home() {
                             </Form>
                         </Col>
                         <Col md={6}>
-                            <CardDeck>
+                            <CardDeck style={{display: "none"}}>
                                 <Card>
                                     <Card.Img variant="top" src="https://www.placehold.it/200x200" />
                                     <Card.Body>

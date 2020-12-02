@@ -3,9 +3,9 @@ import axios from "axios"
 import Navibar from "../components/navbar"
 import TableData from "../components/Table"
 
-class Movies extends React.Component {
+class Shows extends React.Component {
     state = {
-        movies: []
+        shows: []
 
         }
     componentDidMount(){
@@ -13,9 +13,9 @@ class Movies extends React.Component {
             method: 'GET',
             url: 'https://unogsng.p.rapidapi.com/search',
             params: {
-                type: "movie",
+                type: "series",
                 orderby: 'rating',
-                limit: '200',
+                limit: '100',
                 countrylist: '78',
                 audio: 'english',
                 end_year: '2020'
@@ -26,7 +26,7 @@ class Movies extends React.Component {
             }
         };
         axios.request(options).then(res => this.setState ({
-            movies: res.data.results
+            shows: res.data.results
         })).catch(function (error) {
             console.error(error);
         });
@@ -36,7 +36,7 @@ class Movies extends React.Component {
         return (
             <>
             <Navibar />
-            <TableData results={this.state.movies} />
+            <TableData results={this.state.shows} />
             </>
         )
         
@@ -44,4 +44,4 @@ class Movies extends React.Component {
 }
   
 
-export default Movies
+export default Shows

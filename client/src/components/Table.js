@@ -3,7 +3,6 @@ import { Table, Container } from "react-bootstrap"
 
 export default function TableData(props) {
     return (
-       
         <Container className="mt-5" >
             <Table striped bordered hover>
                 <thead>
