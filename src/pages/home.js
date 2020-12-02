@@ -1,8 +1,11 @@
-import React from 'react'
+
 import { Form, Card, Button, Jumbotron, Container, Col, Row, CardDeck } from "react-bootstrap"
 import Navibar from "../components/navbar"
 
+// import axios from "axios"
+
 export default function Home() {
+    
     return (
         <>
         <Navibar />
@@ -68,6 +71,7 @@ export default function Home() {
                                         </Col>
                                     </Form.Row>
                                 </Form.Group>
+                                <Button variant="primary" className="w-100">Generate!</Button>
                             </Form>
                         </Col>
                         <Col md={6}>
@@ -85,9 +89,6 @@ export default function Home() {
                             </CardDeck>
                         </Col>
                     </Row>
-                    <br/>
-                    <hr/>
-                    <Button variant="primary" className="w-100">Generate!</Button>
                 </Jumbotron>
             </div>
         </Container>

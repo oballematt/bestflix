@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Button, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
+import { useAuth } from "../utils/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-// import { Link } from "react-router-dom";
 
 
 function Navibar() {
@@ -30,7 +29,7 @@ function Navibar() {
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                     <Link className="nav-link font" to="/">Home <span className="sr-only">(current)</span></Link>
-                    <Link className="nav-link font" to="/login">Movies</Link>
+                    <Link className="nav-link font" to="/movies">Movies</Link>
                     <Link className="nav-link font" to="/signup">Tv Shows</Link>
                     <Link className="nav-link font" to="/signup">Profile</Link>
                     <Button variant="link" onClick={handleLogout}>Log Out</Button>
