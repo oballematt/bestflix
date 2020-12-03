@@ -31,7 +31,7 @@ function Navibar() {
                     <Link className="nav-link font" to="/">Home <span className="sr-only">(current)</span></Link>
                     <Link className="nav-link font" to="/movies">Movies</Link>
                     <Link className="nav-link font" to="/tvshows">Tv Shows</Link>
-                    <Link className="nav-link font" to="/signup">Profile</Link>
+                    <Link className="nav-link font" to="/profile">Profile</Link>
                     <Button variant="link" onClick={handleLogout}>Log Out</Button>
                 </div>
             </div>

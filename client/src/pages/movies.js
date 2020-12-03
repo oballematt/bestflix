@@ -5,10 +5,19 @@ import TableData from "../components/Table"
 
 class Movies extends React.Component {
     state = {
-        movies: []
-
+        movies: [],
+        title: "",
+        year: "",
+        imdbrating: "",
+        synopsis: ""
         }
-    componentDidMount(){
+        
+    componentDidMount = () => {
+        this.getMovies();
+    };
+    
+
+    getMovies = () => {
         const options = {
             method: 'GET',
             url: 'https://unogsng.p.rapidapi.com/search',
@@ -32,16 +41,37 @@ class Movies extends React.Component {
         });
     }
 
+    handleSave = () => {
+        axios({
+          url: "/",
+          method: "POST",
+          data: this.state.movies,
+        })
+          .then(() => {
+            console.log("Data has been sent to the server");
+            this.getMovies();
+          })
+          .catch((err) => {
+            console.log(err);
+            console.log("Internal server error");
+          });
+      };
+    
+
+
+
     render() {
         return (
             <>
             <Navibar />
-            <TableData results={this.state.movies} />
+            <TableData 
+            handleSave={this.handleSave}
+            results={this.state.movies} />
             </>
         )
         
     }
 }
-  
+
 
 export default Movies

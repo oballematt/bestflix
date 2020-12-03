@@ -32,6 +32,21 @@ class Shows extends React.Component {
         });
     }
 
+//     componentDidMount = () => {
+//         this.getMovie();
+//       };
+    
+//       getMovie = () => {
+//         axios.get("http://api.tvmaze.com/shows?page=1").then((response) => {
+//           const data = response.data;
+//           this.setState({
+//             shows: data,
+//           });
+//           console.log("Data has been received");
+//           console.log(this.state.shows);
+//         });
+//       };
+
     render() {
         return (
             <>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Container } from "react-bootstrap"
+import { Table, Container, Button } from "react-bootstrap"
 
 export default function TableData(props) {
     return (
@@ -21,7 +21,7 @@ export default function TableData(props) {
                         <td>{result.title}</td>
                         <td>{result.year}</td>
                         <td>{result.imdbrating}</td>
-                        <td>{result.synopsis}</td>
+                        <td>{result.synopsis}<Button onClick={props.handleSave}>Save</Button> </td>
                     </tr>
                     ))}
                 </tbody>
