@@ -15,7 +15,15 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes)
 
-mongoose.connect(process.env.MOGOB_URI || "mongodb://localhost/mediatitles")
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/mediatitles',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 
 app.listen(PORT, function() {

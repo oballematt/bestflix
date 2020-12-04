@@ -2,6 +2,8 @@ import React from "react"
 import axios from "axios"
 import Navibar from "../components/navbar"
 import TableData from "../components/Table"
+import API from "../utils/API"
+
 
 class Movies extends React.Component {
     state = {
@@ -41,31 +43,13 @@ class Movies extends React.Component {
         });
     }
 
-    handleSave = () => {
-        axios({
-          url: "/",
-          method: "POST",
-          data: this.state.movies,
-        })
-          .then(() => {
-            console.log("Data has been sent to the server");
-            this.getMovies();
-          })
-          .catch((err) => {
-            console.log(err);
-            console.log("Internal server error");
-          });
-      };
-    
 
-
-
+        
     render() {
         return (
             <>
             <Navibar />
             <TableData 
-            handleSave={this.handleSave}
             results={this.state.movies} />
             </>
         )

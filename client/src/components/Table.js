@@ -1,7 +1,20 @@
 import React from 'react'
 import { Table, Container, Button } from "react-bootstrap"
+import API from '../utils/API'
+
 
 export default function TableData(props) {
+    
+    const handleSave = (result) => {
+        console.log(result)
+        API.saveMedia({
+            title: result.title,
+            year: result.year,
+            imdbrating: result.imdbrating,
+            synopsis: result.synopsis
+        })
+      
+     }
     return (
         <Container className="mt-5" >
             <Table striped bordered hover>
@@ -21,7 +34,7 @@ export default function TableData(props) {
                         <td>{result.title}</td>
                         <td>{result.year}</td>
                         <td>{result.imdbrating}</td>
-                        <td>{result.synopsis}<Button onClick={props.handleSave}>Save</Button> </td>
+                        <td>{result.synopsis}<Button onClick={()=>handleSave(result)}>Save</Button> </td>
                     </tr>
                     ))}
                 </tbody>

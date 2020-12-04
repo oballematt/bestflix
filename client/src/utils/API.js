@@ -1,8 +1,8 @@
 import axios from "axios"
 
 export default {
-    saveMedia : function(mediaData) {
-        return axios.post("/api/movies", mediaData)
+    saveMedia : function(result) {
+        return axios.post("/api/movies", result)
     },
     getMedia: function(){
         return axios.get("/api/profile")
