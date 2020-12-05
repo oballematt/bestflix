@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import Navibar from "../components/navbar"
 import TableData from "../components/Table"
-import API from "../utils/API"
+
 
 
 class Movies extends React.Component {
