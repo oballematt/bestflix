@@ -1,14 +1,18 @@
-import React, { useState } from "react"
+import React, { useState} from "react"
 import { Form, Card, Button, Jumbotron, Container, Col, Row, CardDeck } from "react-bootstrap"
 import Navibar from "../components/navbar"
 import axios from "axios"
-
+import API from "../utils/API"
+import SaveBtn from "../components/SaveBtn"
 
 function Home(){
     const [type, setType] = useState()
     const [genrelist, setGenrelist] = useState()
     const [start_year, setStart_year] = useState()
     const [start_rating, setStart_rating] = useState()
+    const [limit, setLimit] = useState()
+    const [cardDetails, setCardDetails] = useState([])
+
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -22,7 +26,7 @@ function Home(){
                 start_rating: start_rating, 
                 end_rating: "10",
                 orderby: 'rating',
-                limit: '100',
+                limit: limit,
                 countrylist: '78',
                 audio: 'english',
                 end_year: '2020'
@@ -33,14 +37,26 @@ function Home(){
             }
         };
         axios.request(options).then(function (response) {
-            console.log(response.data);
+            console.log(response.data.results)
+            setCardDetails(response.data.results);
         }).catch(function (error) {
             console.error(error);
         });
     }
-
+    const handleSave = (titles) => {
+        console.log(titles)
+        API.saveMedia({
+            title: titles.title,
+            year: titles.year,
+            imdbrating: titles.imdbrating,
+            synopsis: titles.synopsis
+        })
+      
+     }
+   
         return (
             <>
+        
                 <Navibar />
                 <Container className="d-flex align-items-center justify-content-center mt-5"
                     style={{ minHeight: "100vh" }}>
@@ -132,22 +148,41 @@ function Home(){
                                                 </Col>
                                             </Form.Row>
                                         </Form.Group>
+                                        <Form.Group>
+                                            <Form.Row>
+                                                <Form.Label column="lg" lg={2}>
+                                                    Title Limit
+                                                </Form.Label>
+                                                <Col xs={7}>
+                                                    <Form.Control size="lg" as="input" name="limit" onChange={e => setLimit(e.target.value)}/>
+                                                </Col>
+                                            </Form.Row>
+                                        </Form.Group>
                                         <Button type="submit" variant="primary" className="w-100">Generate!</Button>
                                     </Form>
                                 </Col>
+                                {cardDetails.length ? (
                                 <Col md={6}>
-                                    <CardDeck >
-                                        <Card>
-                                            <Card.Img variant="top" src="https://www.placehold.it/200x200" />
-                                            <Card.Body>
-                                                <Card.Title>Card title</Card.Title>
-                                                <Card.Text>
-                                                  
+                                    {cardDetails.map(titles =>(
+                                    <CardDeck key={titles.id} >
+                                        <Card  > 
+                                            <Card.Img variant="top" src={titles.poster}/>
+                                            <Card.Body >
+                                            <Card.Title>
+                                                {titles.title}
+                                            </Card.Title>
+                                            {titles.synopsis}
+                                                <Card.Text>   
                                             </Card.Text>
                                             </Card.Body>
                                         </Card>
-                                    </CardDeck>
+                                        <SaveBtn onClick={()=>handleSave(titles)}/>
+                                    </CardDeck>  
+                                    ))}
                                 </Col>
+                                ): (
+                                    <h3>No Results to Display</h3>
+                                )}
                             </Row>
                         </Jumbotron>
                     </div>

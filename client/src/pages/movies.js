@@ -5,6 +5,7 @@ import TableData from "../components/Table"
 
 
 
+
 class Movies extends React.Component {
     state = {
         movies: [],
@@ -26,7 +27,7 @@ class Movies extends React.Component {
             params: {
                 type: "movie",
                 orderby: 'rating',
-                limit: '100',
+                limit: '200',
                 countrylist: '78',
                 audio: 'english',
                 end_year: '2020'

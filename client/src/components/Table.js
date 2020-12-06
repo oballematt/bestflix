@@ -1,6 +1,7 @@
 import React from 'react'
 import { Table, Container, Button } from "react-bootstrap"
 import API from '../utils/API'
+import SaveBtn from "../components/SaveBtn"
 
 
 export default function TableData(props) {
@@ -34,7 +35,7 @@ export default function TableData(props) {
                         <td>{result.title}</td>
                         <td>{result.year}</td>
                         <td>{result.imdbrating}</td>
-                        <td>{result.synopsis}<Button onClick={()=>handleSave(result)}>Save</Button> </td>
+                        <td>{result.synopsis}<SaveBtn onClick={()=>handleSave(result)}/> </td>
                     </tr>
                     ))}
                 </tbody>

@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { Form, Card, Button, Alert, Container } from "react-bootstrap"
-import { useAuth } from "../utils/AuthContext"
+import { useAuth } from "../../utils/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import "./style.css"
 
 export default function Signup() {
     const emailRef = useRef()
@@ -31,35 +32,34 @@ export default function Signup() {
     }
 
     return (
+        <div className="style">
         <Container className="d-flex align-items-center justify-content-center"
             style={{ minHeight: "100vh" }}>
         <div className="w-100" style={{ maxWidth: "400px" }}>
-            <Card>
+            <Card className="opacity" style={{backgroundColor: "black"}}>
                 <Card.Body>
-                    <h2 className="text-center mb-4">Sign Up</h2>
-            
+                    <h2 className="text-center mb-4" style={{color: "white"}}>Sign Up</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSumbit}>
                         <Form.Group id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required></Form.Control>
+                            <Form.Control style={{backgroundColor:"#383838"}} type="email" ref={emailRef} placeholder="Email" required></Form.Control>
                         </Form.Group>
                         <Form.Group id="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required></Form.Control>
+                            <Form.Control style={{backgroundColor:"#383838"}} type="password" placeholder="Password" ref={passwordRef} required></Form.Control>
                         </Form.Group>
                         <Form.Group id="password-confirm">
-                            <Form.Label>Confirm Password</Form.Label>
-                            <Form.Control type="password" ref={passwordConfirmRef} required></Form.Control>
+                            
+                            <Form.Control style={{backgroundColor:"#383838"}} placeholder="Confirm Password" type="password" ref={passwordConfirmRef} required></Form.Control>
                         </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">Sign Up</Button>
+                        <Button style={{backgroundColor: "red", color:"white"}} disabled={loading} className="w-100" type="submit">Sign Up</Button>
                     </Form>
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">
+            <div className="w-100 text-center mt-2" style={{color: "white"}}>
                 Already have an account? <Link to="/login">Log in</Link>
             </div>
         </div>
         </Container>
+        </div>
     )
 }

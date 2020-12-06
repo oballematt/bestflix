@@ -15,7 +15,7 @@ class Shows extends React.Component {
             params: {
                 type: "series",
                 orderby: 'rating',
-                limit: '100',
+                limit: '200',
                 countrylist: '78',
                 audio: 'english',
                 end_year: '2020'
