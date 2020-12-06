@@ -31,33 +31,32 @@ export default function Login() {
 
     return (
         <div className="style">
-        <Container className="d-flex align-items-center justify-content-center"
-            style={{ minHeight: "100vh" }}>
-            <div className="w-100" style={{ maxWidth: "400px" }}>
-                <div className="opacity" >
-                <Card style={{backgroundColor: "black"}} >
-                    <Card.Body >
-                        <h2 className="text-center mb-4" style={{color: "white"}}>Log In</h2>
-                        {error && <Alert variant="danger">{error}</Alert>}
-                        <Form onSubmit={handleSumbit}>
-                            <Form.Group id="email">
-                                <Form.Control style={{backgroundColor:"#383838"}} type="email" ref={emailRef} placeholder="Email" required></Form.Control>
-                            </Form.Group>
-                            <Form.Group id="password">
-                               
-                                <Form.Control type="password" placeholder="Password" style={{backgroundColor:"#383838",}} ref={passwordRef}required></Form.Control>
-                            </Form.Group>
-                            <Button disabled={loading} style={{backgroundColor: "red", color:"white"}} className="w-100" type="submit">Log In</Button>
-                        </Form>
-                    </Card.Body>
-                </Card>
-                </div>
-                <div className="w-100 text-center mt-2" style={{color: "white"}}>
-                    Need an Account? <Link to="/signup">Sign Up</Link>
-                </div>
-            </div>
-        </Container>
-        </div>
+            <Container className="d-flex align-items-center justify-content-center"
+                style={{ minHeight: "100vh" }}>
+                <div className="w-100" style={{ maxWidth: "400px" }}>
+                    <div className="opacity" >
+                        <Card style={{ backgroundColor: "black" }} >
+                            <Card.Body >
+                                <h2 className="text-center mb-4" style={{ color: "white" }}>Log In</h2>
+                                {error && <Alert variant="danger">{error}</Alert>}
+                                <Form onSubmit={handleSumbit}>
+                                    <Form.Group id="email">
+                                        <Form.Control style={{ backgroundColor: "#383838" }} type="email" ref={emailRef} placeholder="Email" required></Form.Control>
+                                    </Form.Group>
+                                    <Form.Group id="password">
 
+                                        <Form.Control type="password" placeholder="Password" style={{ backgroundColor: "#383838", }} ref={passwordRef} required></Form.Control>
+                                    </Form.Group>
+                                    <Button disabled={loading} style={{ backgroundColor: "red", color: "white" }} className="w-100" type="submit">Log In</Button>
+                                </Form>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div className="w-100 text-center mt-2" style={{ color: "white" }}>
+                        Need an Account? <Link to="/signup">Sign Up</Link>
+                    </div>
+                </div>
+            </Container>
+        </div>
     )
 }

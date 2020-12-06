@@ -1,11 +1,12 @@
-import React, { useState} from "react"
+import React, { useState } from "react"
 import { Form, Card, Button, Jumbotron, Container, Col, Row, CardDeck } from "react-bootstrap"
-import Navibar from "../components/navbar"
+import Navibar from "../../components/navbar"
 import axios from "axios"
-import API from "../utils/API"
-import SaveBtn from "../components/SaveBtn"
+import API from "../../utils/API"
+import SaveBtn from "../../components/SaveBtn"
+import "./style.css"
 
-function Home(){
+function Home() {
     const [type, setType] = useState()
     const [genrelist, setGenrelist] = useState()
     const [start_year, setStart_year] = useState()
@@ -22,8 +23,8 @@ function Home(){
             params: {
                 type: type,
                 genrelist: genrelist,
-                start_year: start_year, 
-                start_rating: start_rating, 
+                start_year: start_year,
+                start_rating: start_rating,
                 end_rating: "10",
                 orderby: 'rating',
                 limit: limit,
@@ -51,12 +52,12 @@ function Home(){
             imdbrating: titles.imdbrating,
             synopsis: titles.synopsis
         })
-      
-     }
-   
-        return (
-            <>
-        
+
+    }
+
+    return (
+        <>
+            <div className="home-style">
                 <Navibar />
                 <Container className="d-flex align-items-center justify-content-center mt-5"
                     style={{ minHeight: "100vh" }}>
@@ -122,7 +123,7 @@ function Home(){
                                                     IMDB Rating
                                                 </Form.Label>
                                                 <Col xs={7}>
-                                                    <Form.Control size="lg" as="select" name="start_rating"  onChange={e => setStart_rating(e.target.value)}  >
+                                                    <Form.Control size="lg" as="select" name="start_rating" onChange={e => setStart_rating(e.target.value)}  >
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -144,7 +145,7 @@ function Home(){
                                                     Start Year
                                                 </Form.Label>
                                                 <Col xs={7}>
-                                                    <Form.Control size="lg" as="input" name="start_year" onChange={e => setStart_year(e.target.value)}/>
+                                                    <Form.Control size="lg" as="input" name="start_year" onChange={e => setStart_year(e.target.value)} />
                                                 </Col>
                                             </Form.Row>
                                         </Form.Group>
@@ -154,7 +155,7 @@ function Home(){
                                                     Title Limit
                                                 </Form.Label>
                                                 <Col xs={7}>
-                                                    <Form.Control size="lg" as="input" name="limit" onChange={e => setLimit(e.target.value)}/>
+                                                    <Form.Control size="lg" as="input" name="limit" onChange={e => setLimit(e.target.value)} />
                                                 </Col>
                                             </Form.Row>
                                         </Form.Group>
@@ -162,34 +163,35 @@ function Home(){
                                     </Form>
                                 </Col>
                                 {cardDetails.length ? (
-                                <Col md={6}>
-                                    {cardDetails.map(titles =>(
-                                    <CardDeck key={titles.id} >
-                                        <Card  > 
-                                            <Card.Img variant="top" src={titles.poster}/>
-                                            <Card.Body >
-                                            <Card.Title>
-                                                {titles.title}
-                                            </Card.Title>
-                                            {titles.synopsis}
-                                                <Card.Text>   
-                                            </Card.Text>
-                                            </Card.Body>
-                                        </Card>
-                                        <SaveBtn onClick={()=>handleSave(titles)}/>
-                                    </CardDeck>  
-                                    ))}
-                                </Col>
-                                ): (
-                                    <h3>No Results to Display</h3>
-                                )}
+                                    <Col md={6}>
+                                        {cardDetails.map(titles => (
+                                            <CardDeck key={titles.id} >
+                                                <Card  >
+                                                    <Card.Img variant="top" src={titles.poster} />
+                                                    <Card.Body >
+                                                        <Card.Title>
+                                                            {titles.title}
+                                                        </Card.Title>
+                                                        {titles.synopsis}
+                                                        <Card.Text>
+                                                        </Card.Text>
+                                                    </Card.Body>
+                                                </Card>
+                                                <SaveBtn onClick={() => handleSave(titles)} />
+                                            </CardDeck>
+                                        ))}
+                                    </Col>
+                                ) : (
+                                        <h3>No Results to Display</h3>
+                                    )}
                             </Row>
                         </Jumbotron>
                     </div>
                 </Container>
-            </>
-        )
-    
+            </div>
+        </>
+    )
+
 }
 
 export default Home

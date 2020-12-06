@@ -21,26 +21,25 @@ function Navibar() {
     return (
         <>
             <nav className="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top">
-            <Link className="navbar-brand" to="/">{currentUser.email}</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
-                    <Link className="nav-link font" to="/">Home <span className="sr-only">(current)</span></Link>
-                    <Link className="nav-link font" to="/movies">Movies</Link>
-                    <Link className="nav-link font" to="/tvshows">Tv Shows</Link>
-                    <Link className="nav-link font" to="/profile">Profile</Link>
-                    <Button variant="link" onClick={handleLogout}>Log Out</Button>
+                <Link className="navbar-brand" to="/">{currentUser.email}</Link>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div className="navbar-nav">
+                        <Link className="nav-link font" to="/">Home <span className="sr-only">(current)</span></Link>
+                        <Link className="nav-link font" to="/movies">Movies</Link>
+                        <Link className="nav-link font" to="/tvshows">Tv Shows</Link>
+                        <Link className="nav-link font" to="/profile">Profile</Link>
+                        <Button variant="link" onClick={handleLogout}>Log Out</Button>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
             <div>
-            {error && <Alert variant="danger">{error}</Alert>}
+                {error && <Alert variant="danger">{error}</Alert>}
             </div>
         </>
-
     )
 }
 

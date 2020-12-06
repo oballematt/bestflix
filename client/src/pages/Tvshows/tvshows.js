@@ -1,14 +1,14 @@
 import React from "react"
 import axios from "axios"
-import Navibar from "../components/navbar"
-import TableData from "../components/Table"
+import Navibar from "../../components/navbar"
+import TableData from "../../components/Table/Table"
 
 class Shows extends React.Component {
     state = {
         shows: []
 
-        }
-    componentDidMount(){
+    }
+    componentDidMount() {
         const options = {
             method: 'GET',
             url: 'https://unogsng.p.rapidapi.com/search',
@@ -25,24 +25,22 @@ class Shows extends React.Component {
                 'x-rapidapi-host': 'unogsng.p.rapidapi.com'
             }
         };
-        axios.request(options).then(res => this.setState ({
+        axios.request(options).then(res => this.setState({
             shows: res.data.results
         })).catch(function (error) {
             console.error(error);
         });
     }
 
-
     render() {
         return (
             <>
-            <Navibar />
-            <TableData results={this.state.shows} />
+                <Navibar />
+                <TableData results={this.state.shows} />
             </>
         )
-        
     }
 }
-  
+
 
 export default Shows
