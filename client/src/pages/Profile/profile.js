@@ -3,9 +3,8 @@ import Navibar from "../../components/navbar"
 import API from "../../utils/API"
 import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
-import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import "./style.css"
+import { Table, } from "react-bootstrap";
+import { Container, Col, Row } from "../../components/Grid"
 
 
 function Profile() {
@@ -26,35 +25,46 @@ function Profile() {
   return (
     <>
       <Navibar />
-      <br />
-      <br />
-      <br />
-      <div className="profile-style">
-        <Container>
-          <Row>
-            <Col size="md-12 sm-12">
-              <Jumbotron>
-                <h1>What To Watch</h1>
-              </Jumbotron>
+      <Container className="mt-5">
+        <Row>
+          <Col size="md-12 sm-12">
+            <Jumbotron style={{opacity: ".8", marginTop: "50"}}>
+              <h1>What to Watch</h1>
+            </Jumbotron>
+            <div className="table-style">
               {media.length ? (
-                <List>
-                  {media.map(titles => (
-                    <ListItem key={titles._id}>
-                      <li>{titles.title}</li>
-                      <li>{titles.year}</li>
-                      <li>{titles.imdbrating}</li>
-                      <li>{titles.synopsis}</li>
-                      <DeleteBtn onClick={() => deleteTitle(titles._id)} />
-                    </ListItem>
-                  ))}
-                </List>
+                <Table className="table-dark" striped bordered style={{ color: "white" }}>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Title</th>
+                      <th>Year Released</th>
+                      <th>IMBD Score</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {media.map(titles => (
+                      <tr key={titles._id}>
+                        <td><img src={titles.img} style={{ maxHeight: "200px" }} className="w-100" alt="" /></td>
+                        <td>{titles.title}</td>
+                        <td>{titles.year}</td>
+                        <td>{titles.imdbrating}</td>
+                        <td>{titles.synopsis}<DeleteBtn onClick={() => deleteTitle(titles._id)} /> </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
               ) : (
-                  <h3>No Results to Display</h3>
+                  <h3 style={{ color: "white" }}>No Results to Display</h3>
                 )}
-            </Col>
-          </Row>
-        </Container>
-      </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
+
+
     </>
   )
 }

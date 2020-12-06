@@ -5,7 +5,8 @@ const mediaSchema = new Schema({
     title: { type: String, required: true},
     year: {type: Number, required: true},
     imdbrating: { type: Number, required: true},
-    synopsis: { type: String, required: true}
+    synopsis: { type: String, required: true},
+    img: { type: String, required: true}
 })
 
 const Media = mongoose.model("Media", mediaSchema)

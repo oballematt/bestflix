@@ -13,14 +13,15 @@ export default function TableData(props) {
             title: result.title,
             year: result.year,
             imdbrating: result.imdbrating,
-            synopsis: result.synopsis
+            synopsis: result.synopsis,
+            img: result.poster
         })
 
     }
     return (
         <div className="table-style">
             <Container className="mt-5" >
-                <Table striped bordered style={{ color: "white" }}>
+                <Table className="table-dark" striped bordered style={{ color: "white" }}>
                     <thead>
                         <tr>
                             <th></th>

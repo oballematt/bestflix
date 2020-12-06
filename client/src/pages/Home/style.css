@@ -1,3 +1,21 @@
-.home-style{
-    background-image: linear-gradient(	#780000  ,	#101010);
+
+
+.search{
+    opacity: .8;
+    margin-top: 50px;
 }
+
+.inputFont{
+    color: white; 
+    font-weight: bolder; 
+    font-variant: small-caps;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+p{
+    font-size: medium;
+    border: solid;
+    border-style: inset;
+}
+   
