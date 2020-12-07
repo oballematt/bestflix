@@ -30,6 +30,7 @@ export default function TableData({titles}) {
                             <th>Year Released</th>
                             <th>IMBD Score</th>
                             <th>Description</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,7 +40,8 @@ export default function TableData({titles}) {
                                 <td>{result.title}</td>
                                 <td>{result.year}</td>
                                 <td>{result.imdbrating}</td>
-                                <td>{result.synopsis}<SaveBtn onClick={() => handleSave(result)} /> </td>
+                                <td>{result.synopsis} </td>
+                                <td><SaveBtn onClick={() => handleSave(result)} /></td>
                             </tr>
                         ))}
                     </tbody>

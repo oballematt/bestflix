@@ -41,6 +41,7 @@ function Profile() {
                       <th>Year Released</th>
                       <th>IMBD Score</th>
                       <th>Description</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -50,7 +51,8 @@ function Profile() {
                         <td>{titles.title}</td>
                         <td>{titles.year}</td>
                         <td>{titles.imdbrating}</td>
-                        <td>{titles.synopsis}<DeleteBtn onClick={() => deleteTitle(titles._id)} /> </td>
+                        <td>{titles.synopsis} </td>
+                        <td><DeleteBtn onClick={() => deleteTitle(titles._id)} /></td>
                       </tr>
                     ))}
                   </tbody>
