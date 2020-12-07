@@ -1,3 +1,8 @@
 .table-style{
     margin-top: 100px;
 }
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}

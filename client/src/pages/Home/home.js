@@ -64,15 +64,15 @@ function Home() {
                     style={{ minHeight: "100vh" }}>
                     <div className="w-100" style={{ maxWidth: "800px" }}>
                         <Row>
-                            <Col className="offset-3" md={6}>
-                                <Jumbotron style={{ backgroundColor: "black", opacity: ".8" }} >
-                                    <Form style={{ maxWidth: "400px" }} onSubmit={handleSubmit} >
+                            <Col md={12} >
+                                <Jumbotron  style={{ backgroundColor: "black", opacity: ".8" }} >
+                                    <Form style={{  alignItems:"center" }} onSubmit={handleSubmit} >
                                         <Form.Group>
                                             <Form.Row>
                                                 <Form.Label className="text-center inputFont" column="lg">
                                                     Genre
                                                 </Form.Label>
-                                                <Form.Control style={{ backgroundColor: "#383838", opacity: "1", color: "white" }} className="align-items-end" size="lg" as="select" placeholder="Large text" name="genrelist" onChange={e => setGenrelist(e.target.value)} >
+                                                <Form.Control style={{ backgroundColor: "#383838", opacity: "1", color: "white" }}  size="lg" as="select" placeholder="Large text" name="genrelist" onChange={e => setGenrelist(e.target.value)} >
                                                     <option className="inputFont" value="10673,10702,11804,11828,1192487,1365,1568,2125,2653,43040,43048,4344,46576,7442,75418,76501,77232,788212,801362,899,9584">Action and Adventure</option>
                                                     <option className="inputFont" value="13335,13573,32392,52852,55774,59433,84488,88635">Muscials</option>
                                                     <option className="inputFont" value="1492,108533,11014,1372,1568,1694,2595,2729,3327,3916,47147,4734,49110,50232,52780,52849,5903,6000,6926,852491">Sci-Fi</option>
@@ -98,7 +98,7 @@ function Home() {
                                                         Type
                                                 </Form.Label>
                                                 </Col>
-                                                <Col md={4} className="offset-1" >
+                                                <Col md={2} className="offset-4" >
                                                     <Form.Check style={{ backgroundColor: "#383838", opacity: "1", color: "white" }}
                                                         id="movie"
                                                         name="type"
@@ -108,7 +108,7 @@ function Home() {
                                                         onChange={e => setType(e.target.value)}
                                                     />
                                                 </Col>
-                                                <Col md={4} className="offset-2">
+                                                <Col md={2} >
                                                     <Form.Check style={{ backgroundColor: "#383838", opacity: "1", color: "white" }}
                                                         type="radio"
                                                         label="Tv Shows"
@@ -163,6 +163,7 @@ function Home() {
                                                     Order By
                                                 </Form.Label>
                                                 <Form.Control style={{ backgroundColor: "#383838", opacity: "1", color: "white" }} size="lg" as="select" name="orderby" onChange={e => setOrder(e.target.value)}  >
+                                                    <option value="rating">Choose...</option>
                                                     <option value="rating">Rating</option>
                                                     <option value="title">Title</option>
                                                     <option value="date">Year Released</option>
