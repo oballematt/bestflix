@@ -42,20 +42,20 @@ export default function Signup() {
                             {error && <Alert variant="danger">{error}</Alert>}
                             <Form onSubmit={handleSumbit}>
                                 <Form.Group id="email">
-                                    <Form.Control style={{ backgroundColor: "#383838" }} type="email" ref={emailRef} placeholder="Email" required></Form.Control>
+                                    <Form.Control style={{ backgroundColor: "#383838", color: "white" }} type="email" ref={emailRef} placeholder="Email" required></Form.Control>
                                 </Form.Group>
                                 <Form.Group id="password">
-                                    <Form.Control style={{ backgroundColor: "#383838" }} type="password" placeholder="Password" ref={passwordRef} required></Form.Control>
+                                    <Form.Control style={{ backgroundColor: "#383838", color: "white" }} type="password" placeholder="Password" ref={passwordRef} required></Form.Control>
                                 </Form.Group>
                                 <Form.Group id="password-confirm">
-                                    <Form.Control style={{ backgroundColor: "#383838" }} placeholder="Confirm Password" type="password" ref={passwordConfirmRef} required></Form.Control>
+                                    <Form.Control style={{ backgroundColor: "#383838", color: "white" }} placeholder="Confirm Password" type="password" ref={passwordConfirmRef} required></Form.Control>
                                 </Form.Group>
                                 <Button style={{ backgroundColor: "red", color: "white" }} disabled={loading} className="w-100" type="submit">Sign Up</Button>
                             </Form>
                         </Card.Body>
                     </Card>
-                    <div className="w-100 text-center mt-2" style={{ color: "white" }}>
-                        Already have an account? <Link to="/login">Log in</Link>
+                    <div className="w-100 text-center mt-2" style={{ color: "white", backgroundColor:"black", opacity: ".8" }}>
+                        Already have an account? <Link style={{color: "white", fontWeight:"bolder", backgroundColor: "black", opacity: ".8"}} to="/login">Log in</Link>
                     </div>
                 </div>
             </Container>

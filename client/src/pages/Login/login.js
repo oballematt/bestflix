@@ -52,8 +52,8 @@ export default function Login() {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="w-100 text-center mt-2" style={{ color: "white" }}>
-                        Need an Account? <Link to="/signup">Sign Up</Link>
+                    <div className="w-100 text-center mt-2" style={{ color: "white", backgroundColor: "black", opacity:".8" }}>
+                        Need an Account? <Link style={{color: "white", fontWeight: "bolder", backgroundColor:"black", opacity:".8"}} to="/signup">Sign Up</Link>
                     </div>
                 </div>
             </Container>
