@@ -2,3 +2,47 @@ body{
     background: rgb(16,16,16);
     background: linear-gradient(90deg, rgba(16,16,16,1) 0%, rgba(120,0,0,1) 50%, rgba(16,16,16,1) 100%);
 }
+
+.modal-bg{
+    background: rgb(16,16,16);
+    background: linear-gradient(90deg, rgba(16,16,16,1) 0%, rgba(120,0,0,1) 50%, rgba(16,16,16,1) 100%);
+}
+
+.cntrl-btn {
+    float: right;
+    color: #e74944;
+    font-size: 2rem;
+  }
+
+  .style{
+    background-image: url(https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg);
+}
+
+
+.opacity{
+    opacity: .9;
+    background-color: black;
+    color: "white"
+}
+
+.search{
+    opacity: .8;
+    margin-top: 100px;
+}
+
+.inputFont{
+    color: white; 
+    font-weight: bolder; 
+    font-variant: small-caps;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+p{
+    font-size: medium;
+    border: solid;
+    border-style: inset;
+}
+   
+
+  
