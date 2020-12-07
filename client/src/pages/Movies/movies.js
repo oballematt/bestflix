@@ -1,55 +1,59 @@
-import React from "react"
+import React, {useState, useEffect } from "react"
 import axios from "axios"
 import Navibar from "../../components/navbar"
 import TableData from "../../components/Table/Table"
+import Pagination from "../../components/Pagination/Pagination"
 
 
-class Movies extends React.Component {
-    state = {
-        movies: [],
-        title: "",
-        year: "",
-        imdbrating: "",
-        synopsis: ""
-    }
+function Movies() {
+    const [movies, setMovies] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [titlesPerPage] = useState(10)
+    
 
-    componentDidMount = () => {
-        this.getMovies();
-    };
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const options = {
+                method: 'GET',
+                url: 'https://unogsng.p.rapidapi.com/search',
+                params: {
+                    type: "movie",
+                    orderby: 'rating',
+                    limit: '100',
+                    countrylist: '78',
+                    audio: 'english',
+                    end_year: '2020'
+                },
+                headers: {
+                    'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
+                    'x-rapidapi-host': 'unogsng.p.rapidapi.com'
+                }
+            };
+             await axios.request(options).then(function (response) {
+                console.log(response.data.results)
+                setMovies(response.data.results);
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
+        fetchPosts()
 
-    getMovies = () => {
-        const options = {
-            method: 'GET',
-            url: 'https://unogsng.p.rapidapi.com/search',
-            params: {
-                type: "movie",
-                orderby: 'rating',
-                limit: '200',
-                countrylist: '78',
-                audio: 'english',
-                end_year: '2020'
-            },
-            headers: {
-                'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
-                'x-rapidapi-host': 'unogsng.p.rapidapi.com'
-            }
-        };
-        axios.request(options).then(res => this.setState({
-            movies: res.data.results
-        })).catch(function (error) {
-            console.error(error);
-        });
-    }
+    }, [])
+    const indexOfLastTitle = currentPage * titlesPerPage
+    const indexOfFirstTitle = indexOfLastTitle - titlesPerPage
+    const currentTitle = movies.slice(indexOfFirstTitle, indexOfLastTitle)
 
-    render() {
+    const paginate = pageNumber => setCurrentPage(pageNumber)
         return (
             <>
                 <Navibar />
-                <TableData
-                    results={this.state.movies} />
+                <TableData titles={currentTitle}  />
+                <Pagination titlesPerPage={titlesPerPage} totalTitles={movies.length} paginate={paginate}/>
+                
+                
             </>
         )
-    }
+    
 }
 
 

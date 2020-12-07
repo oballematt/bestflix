@@ -5,7 +5,8 @@ import SaveBtn from "../SaveBtn"
 import "./style.css"
 
 
-export default function TableData(props) {
+export default function TableData({titles}) {
+  
 
     const handleSave = (result) => {
         console.log(result)
@@ -32,7 +33,7 @@ export default function TableData(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {props.results.map(result => (
+                        {titles.map(result => (
                             <tr key={result.id}>
                                 <td><img src={result.poster} style={{ maxHeight: "200px" }} className="w-100" alt="" /></td>
                                 <td>{result.title}</td>

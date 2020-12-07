@@ -41,11 +41,11 @@ export default function Login() {
                                 {error && <Alert variant="danger">{error}</Alert>}
                                 <Form onSubmit={handleSumbit}>
                                     <Form.Group id="email">
-                                        <Form.Control style={{ backgroundColor: "#383838" }} type="email" ref={emailRef} placeholder="Email" required></Form.Control>
+                                        <Form.Control style={{ backgroundColor: "#383838", color:"white" }} type="email" ref={emailRef} placeholder="Email" required></Form.Control>
                                     </Form.Group>
                                     <Form.Group id="password">
 
-                                        <Form.Control type="password" placeholder="Password" style={{ backgroundColor: "#383838", }} ref={passwordRef} required></Form.Control>
+                                        <Form.Control type="password" placeholder="Password" style={{ backgroundColor: "#383838", color:"white"}} ref={passwordRef} required></Form.Control>
                                     </Form.Group>
                                     <Button disabled={loading} style={{ backgroundColor: "red", color: "white" }} className="w-100" type="submit">Log In</Button>
                                 </Form>
