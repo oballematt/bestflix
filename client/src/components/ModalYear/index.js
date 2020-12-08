@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Modal, Form} from "react-bootstrap"
+import { Button, Modal, Form } from "react-bootstrap"
 
 export default function ModalButton({ year }) {
     const [show, setShow] = useState(false);
@@ -12,8 +12,8 @@ export default function ModalButton({ year }) {
 
     return (
         <>
-             <h5 className="inputFont text-center">Year</h5>
-            <Button style={{ backgroundColor: "black", opacity: "1", color: "white", borderColor:"red" }} variant="primary" className="w-100 mb-4 inputFont" onClick={handleShow}>
+            <h5 className="inputFont text-center">Year</h5>
+            <Button style={{ backgroundColor: "black", opacity: "1", color: "white", borderColor: "red" }} variant="primary" className="w-100 mb-4 inputFont" onClick={handleShow}>
                 {button}
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -23,12 +23,12 @@ export default function ModalButton({ year }) {
                 <Modal.Body className="inputFont modal-bg">
                     <Form.Group>
                         <Form.Row>
-                            <Form.Control style={{ backgroundColor: "#383838", opacity: "1", color: "white" }} size="lg" as="input" name="start_year" onChange={e => {year(e.target.value); changeButton(e.target.value)}} />
+                            <Form.Control style={{ backgroundColor: "#383838", opacity: "1", color: "white" }} size="lg" as="input" name="start_year" onChange={e => { year(e.target.value); changeButton(e.target.value) }} />
                         </Form.Row>
                     </Form.Group>
                 </Modal.Body>
                 <Modal.Footer className="inputFont modal-bg">
-                    <Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor:"red" }} variant="primary" onClick={handleClose}>
+                    <Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} variant="primary" onClick={handleClose}>
                         Save Changes
                         </Button>
                 </Modal.Footer>

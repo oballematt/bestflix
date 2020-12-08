@@ -53,8 +53,8 @@ export default function Signup() {
                             </Form>
                         </Card.Body>
                     </Card>
-                    <div className="w-100 text-center mt-2" style={{ color: "white", backgroundColor:"black", opacity: ".8" }}>
-                        Already have an account? <Link style={{color: "white", fontWeight:"bolder", backgroundColor: "black", opacity: ".8"}} to="/login">Log in</Link>
+                    <div className="w-100 text-center mt-2" style={{ color: "white", backgroundColor: "black", opacity: ".8" }}>
+                        Already have an account? <Link style={{ color: "white", fontWeight: "bolder", backgroundColor: "black", opacity: ".8" }} to="/login">Log in</Link>
                     </div>
                 </div>
             </Container>

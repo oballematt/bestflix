@@ -2,7 +2,7 @@ import React from 'react'
 import { Table, Container, Row, Col } from "react-bootstrap"
 import API from '../../utils/API'
 import SaveBtn from "../SaveBtn"
-import "./style.css"
+
 
 
 export default function TableData({ titles }) {
@@ -20,7 +20,7 @@ export default function TableData({ titles }) {
 
     }
     return (
-        <div className="table-style">
+        <div className="search">
             <Container className="mt-5" >
                 <Row>
                     <Col xs={12}>

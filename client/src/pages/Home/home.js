@@ -57,8 +57,7 @@ function Home() {
             imdbrating: titles.imdbrating,
             synopsis: titles.synopsis,
             img: titles.img
-        })
-
+         })
     }
 
     return (
@@ -66,19 +65,19 @@ function Home() {
             <div className="home-style">
                 <Navibar />
                 <Container>
-                <Row>
+                    <Row>
                         <Col md={12}>
-                        <div className="sign">
-                            <span className="fast-flicker">be</span>st<span className="flicker">fl</span>ix
+                            <div className="sign">
+                                <span className="fast-flicker">be</span>st<span className="flicker">fl</span>ix
                          </div>
-                         </Col>
-                        </Row>
+                        </Col>
+                    </Row>
                 </Container>
                 <Container className="d-flex align-items-center justify-content-center search"
                     style={{ minHeight: "100vh" }}>
-                    
+
                     <div className="w-100" style={{ maxWidth: "800px" }}>
-                   
+
                         <Row>
                             <Col md={12} >
                                 <Jumbotron style={{ backgroundColor: "black", opacity: ".8" }} >
@@ -89,7 +88,7 @@ function Home() {
                                         <ModalYear year={setStart_year} />
                                         <ModalLimit limit={setLimit} />
                                         <ModalOrder order={setOrder} />
-                                        <Button style={{ backgroundColor: "red" }} type="submit" variant="primary" className="w-100">Generate!</Button>
+                                        <Button style={{backgroundColor: "red"}} type="submit" variant="primary" className="w-100">Generate!</Button>
                                     </Form>
                                 </Jumbotron>
                             </Col>
@@ -128,7 +127,7 @@ function Home() {
                 </Container>
             </div>
         </>
-    )
+   )
 
 }
 

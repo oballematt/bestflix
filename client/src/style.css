@@ -44,6 +44,15 @@ p{
     border-style: inset;
 }
 
+.table-style{
+    margin-top: 200px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
 @font-face {
     font-family: Clip;
     src: url("https://acupoftee.github.io/fonts/Clip.ttf");
@@ -244,5 +253,6 @@ p{
         opacity: 1;
       }
     }
+
+
     
-  

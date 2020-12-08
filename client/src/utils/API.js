@@ -13,4 +13,5 @@ export default {
     deleteMedia: function (id) {
         return axios.delete("/api/movies/" + id);
     },
+
 }

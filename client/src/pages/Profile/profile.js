@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Navibar from "../../components/navbar"
 import API from "../../utils/API"
 import DeleteBtn from "../../components/DeleteBtn";
-import { Table, } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { ColProfile, RowProfile } from "../../components/Grid"
-import {Container, Row, Col} from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 
 function Profile() {
@@ -22,18 +22,20 @@ function Profile() {
       .then(res => API.getMedia())
       .catch(err => console.log(err));
   }
+
+
   return (
     <>
       <Navibar />
       <Container>
-                <Row>
-                    <Col md={12}>
-                        <div className="sign">
-                            <span className="fast-flicker">Pr</span>of<span className="flicker">i</span>le
-                         </div>
-                    </Col>
-                </Row>
-            </Container>
+        <Row>
+          <Col md={12}>
+            <div className="sign">
+              <span className="fast-flicker">Pr</span>of<span className="flicker">i</span>le
+            </div>
+          </Col>
+        </Row>
+      </Container>
       <Container className="mt-5">
         <RowProfile>
           <ColProfile size="md-12 sm-12">
@@ -70,9 +72,6 @@ function Profile() {
           </ColProfile>
         </RowProfile>
       </Container>
-
-
-
     </>
   )
 }

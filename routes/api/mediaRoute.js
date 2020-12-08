@@ -10,4 +10,5 @@ router.route("/:id")
 .get(mediaController.findById)
 .delete(mediaController.remove)
 
+
 module.exports = router

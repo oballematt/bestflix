@@ -59,11 +59,8 @@ function Movies() {
             </Container>
             <TableData titles={currentTitle} />
             <Pagination titlesPerPage={titlesPerPage} totalTitles={movies.length} paginate={paginate} />
-
-
         </>
     )
-
 }
 
 

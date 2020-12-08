@@ -24,9 +24,9 @@ export default function ModalButton({ order }) {
                 </Modal.Header>
                 <Modal.Body className="modal-bg">
                     <ListGroup>
-                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Rating" value="rating" onClick={e => {order(e.target.value); changeButton(e.target.name); handleClose()}}>Rating</Button></ListGroup.Item>
-                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Title" value="title" onClick={e => {order(e.target.value); changeButton(e.target.name); handleClose()}}>Title</Button></ListGroup.Item>
-                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Runtime" value="runtime" onClick={e => {order(e.target.value); changeButton(e.target.name); handleClose()}}>Runtime</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Rating" value="rating" onClick={e => { order(e.target.value); changeButton(e.target.name); handleClose() }}>Rating</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Title" value="title" onClick={e => { order(e.target.value); changeButton(e.target.name); handleClose() }}>Title</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Runtime" value="runtime" onClick={e => { order(e.target.value); changeButton(e.target.name); handleClose() }}>Runtime</Button></ListGroup.Item>
                     </ListGroup>
                 </Modal.Body>
             </Modal>
