@@ -28,7 +28,7 @@ export default function ModalButton({ year }) {
                     </Form.Group>
                 </Modal.Body>
                 <Modal.Footer className="inputFont modal-bg">
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor:"red" }} variant="primary" onClick={handleClose}>
                         Save Changes
                         </Button>
                 </Modal.Footer>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Navibar from "../../components/navbar"
 import API from "../../utils/API"
-import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
 import { Table, } from "react-bootstrap";
-import { Container, Col, Row } from "../../components/Grid"
+import { ColProfile, RowProfile } from "../../components/Grid"
+import {Container, Row, Col} from "react-bootstrap"
 
 
 function Profile() {
@@ -25,12 +25,18 @@ function Profile() {
   return (
     <>
       <Navibar />
+      <Container>
+                <Row>
+                    <Col md={12}>
+                        <div className="sign">
+                            <span className="fast-flicker">Pr</span>of<span className="flicker">i</span>le
+                         </div>
+                    </Col>
+                </Row>
+            </Container>
       <Container className="mt-5">
-        <Row>
-          <Col size="md-12 sm-12">
-            <Jumbotron style={{opacity: ".8", marginTop: "50"}}>
-              <h1>What to Watch</h1>
-            </Jumbotron>
+        <RowProfile>
+          <ColProfile size="md-12 sm-12">
             <div className="table-style">
               {media.length ? (
                 <Table className="table-dark" striped bordered style={{ color: "white" }}>
@@ -61,8 +67,8 @@ function Profile() {
                   <h3 style={{ color: "white" }}>No Results to Display</h3>
                 )}
             </div>
-          </Col>
-        </Row>
+          </ColProfile>
+        </RowProfile>
       </Container>
 
 

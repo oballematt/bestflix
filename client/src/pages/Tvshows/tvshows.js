@@ -3,6 +3,7 @@ import axios from "axios"
 import Navibar from "../../components/navbar"
 import TableData from "../../components/Table/Table"
 import Pagination from "../../components/Pagination/Pagination"
+import {Container, Row, Col} from "react-bootstrap"
 
 
 function Shows() {
@@ -45,6 +46,15 @@ function Shows() {
     const paginate = pageNumber => setCurrentPage(pageNumber)
         return (
             <>
+             <Container>
+                <Row>
+                    <Col md={12}>
+                        <div className="sign">
+                            <span className="fast-flicker">Tv</span>Sh<span className="flicker">ow</span>s
+                         </div>
+                    </Col>
+                </Row>
+            </Container>
                 <Navibar />
                 <TableData titles={currentTitle}  />
                 <Pagination titlesPerPage={titlesPerPage} totalTitles={shows.length} paginate={paginate}/>

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Button, Modal, Form } from "react-bootstrap"
+import { Button, Modal, ListGroup } from "react-bootstrap"
 
 export default function ModalButton({ order }) {
     const [show, setShow] = useState(false);
     const [button, setButton] = useState("Choose...")
-   
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -14,8 +14,8 @@ export default function ModalButton({ order }) {
 
     return (
         <>
-             <h5 className="inputFont text-center">Order By</h5>
-            <Button style={{ backgroundColor: "black", opacity: "1", color: "white", borderColor:"red" }} variant="primary" className="w-100 mb-4 inputFont"  onClick={handleShow}>
+            <h5 className="inputFont text-center">Order By</h5>
+            <Button style={{ backgroundColor: "black", opacity: "1", color: "white", borderColor: "red" }} variant="primary" className="w-100 mb-4 inputFont" onClick={handleShow}>
                 {button}
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -23,23 +23,12 @@ export default function ModalButton({ order }) {
                     Order By
                 </Modal.Header>
                 <Modal.Body className="modal-bg">
-                    <Form.Group>
-                        <Form.Row>
-                            <Form.Control style={{ backgroundColor: "#383838", opacity: "1", color: "white" }} size="lg" as="select" name="orderby" onClick={e => changeButton(e.target.value)} onChange={e => order(e.target.value)}  >
-                                <option value="rating">Choose...</option>
-                                <option value="rating">Rating</option>
-                                <option value="title">Title</option>
-                                <option value="date">Year Released</option>
-                                <option value="runtime">Runtime</option>
-                            </Form.Control>
-                        </Form.Row>
-                    </Form.Group>
+                    <ListGroup>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Rating" value="rating" onClick={e => {order(e.target.value); changeButton(e.target.name); handleClose()}}>Rating</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Title" value="title" onClick={e => {order(e.target.value); changeButton(e.target.name); handleClose()}}>Title</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Runtime" value="runtime" onClick={e => {order(e.target.value); changeButton(e.target.name); handleClose()}}>Runtime</Button></ListGroup.Item>
+                    </ListGroup>
                 </Modal.Body>
-                <Modal.Footer className="modal-bg">
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                        </Button>
-                </Modal.Footer>
             </Modal>
         </>
     );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Modal, Form } from "react-bootstrap"
+import { Button, Modal, ListGroup } from "react-bootstrap"
 
 export default function ModalButton({ rating }) {
     const [show, setShow] = useState(false);
@@ -21,28 +21,19 @@ export default function ModalButton({ rating }) {
                     Choose an  IMDB rating!
                 </Modal.Header>
                 <Modal.Body className="modal-bg inputFont">
-                    <Form.Group>
-                        <Form.Row>
-                            <Form.Control style={{ backgroundColor: "#383838", opacity: "1", color: "white" }} size="lg" as="select" name="start_rating" onClick={e => changeButton(e.target.value)} onChange={e => rating(e.target.value)}  >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </Form.Control>
-                        </Form.Row>
-                    </Form.Group>
+                <ListGroup>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="1" value="1" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>1</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="2" value="2" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>2</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="3" value="3" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>3</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="4" value="4" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>4</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="5" value="5" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>5</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="6" value="6" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>6</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="7" value="7" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>7</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="8" value="8" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>8</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="9" value="9" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>9</Button></ListGroup.Item>
+                        <ListGroup.Item className="modal-bg"><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="10" value="10" onClick={e => {rating(e.target.value); changeButton(e.target.name); handleClose()}}>10</Button></ListGroup.Item>
+                    </ListGroup>
                 </Modal.Body>
-                <Modal.Footer className="modal-bg inputFont">
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                        </Button>
-                </Modal.Footer>
             </Modal>
         </>
     );

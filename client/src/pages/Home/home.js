@@ -65,9 +65,20 @@ function Home() {
         <>
             <div className="home-style">
                 <Navibar />
+                <Container>
+                <Row>
+                        <Col md={12}>
+                        <div className="sign">
+                            <span className="fast-flicker">be</span>st<span className="flicker">fl</span>ix
+                         </div>
+                         </Col>
+                        </Row>
+                </Container>
                 <Container className="d-flex align-items-center justify-content-center search"
                     style={{ minHeight: "100vh" }}>
+                    
                     <div className="w-100" style={{ maxWidth: "800px" }}>
+                   
                         <Row>
                             <Col md={12} >
                                 <Jumbotron style={{ backgroundColor: "black", opacity: ".8" }} >

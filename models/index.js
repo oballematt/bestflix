@@ -1,3 +1,3 @@
 module.exports = {
-    Media: require("./media")
+    Media: require("./media"),
 }

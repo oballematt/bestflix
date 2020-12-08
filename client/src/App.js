@@ -6,6 +6,7 @@ import Movies from "./pages/Movies/movies"
 import Shows from "./pages/Tvshows/tvshows"
 import Profile from "./pages/Profile/profile"
 import PrivateRoute from "./components/PrivateRoute"
+
 import { AuthProvider } from "./utils/AuthContext"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
