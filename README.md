@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Best Flix
+  
+  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/oballematt/bestflix?style=flat&logo=appveyor) 
+  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ## Description
 
-## Available Scripts
+  In this application, when the user logs in they will be able to search for a number of tv shows or movies based on criteria that they dictate. They will be able to choose a number of options such as genre, rating, and how many titles they want to display. If the user find any titles they like, they will be able to save the title to their profile. There will also be seperate pages with top 100 rated movies and tv shows. The user will also be able to save any of these titles to their profile.
+  ![Login] (src/images/login.PNG)
+  ![Home] (src/images/home.PNG)
+  ![Home1] (src/images/home1.PNG) 
+  ![Movies] (src/images/movies.PNG)
+  ![TvShows] (src/images/tvshows.PNG)
+  ![Profile1] (src/images/profile1.PNG)
+  
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contribution](#contribution)
+  * [License](#license)
+  ## Installation
+  
+  Project is deployed on Heroku. No need to install unless you want to contribute. If you wish to contribute, run npm install in the terminal and all dependencies will be installed.
+  
+  
+  ## Usage
+  
+  Follow the prompts given on the browser. See description for more information.
+  
+  
+  ## Contribution
+  
+  Anyone can contribute to this project to improve the functionality and UI
+  
+  
+  ## License
+  
+  MIT License
+  
+  
+  ## Questions?
+  
+  If you have any questions, please contact me with the information below:
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  Github [@oballematt](https://github.com/oballematt)
+  
