@@ -6,6 +6,8 @@
   ## Description
 
   In this application, when the user logs in they will be able to search for a number of tv shows or movies based on criteria that they dictate. They will be able to choose a number of options such as genre, rating, and how many titles they want to display. If the user find any titles they like, they will be able to save the title to their profile. There will also be seperate pages with top 100 rated movies and tv shows. The user will also be able to save any of these titles to their profile.
+  Website: https://bestflix-mo.herokuapp.com
+  
   ![Login](client/src/images/login.PNG)
   ![Home](client/src/images/home.PNG)
   ![Home1](client/src/images/home1.PNG) 
